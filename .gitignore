@@ -2,5 +2,6 @@ data/
 .ipynb_checkpoints/
 *.egg-info/
 venv/
+__pycache__/
 .DS_store
 .git
