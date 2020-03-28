@@ -59,15 +59,15 @@ def scrape_jaap(target):
             full_houses_dict.update(house_dict)
             count +=1
 
-    # save temp result
-    outfile = f'housing_data_{today}.json'
-    outdir = f'data/{outfile}'
-    if not path.isfile(outdir):
-        with open(outdir, 'w') as outstream:
-            json.dump(full_houses_dict, outstream, indent=2)
-    else:
-        with open(outdir, 'r') as instream:
-            current_full_houses_dict = json.load(instream)
-        current_full_houses_dict.update(full_houses_dict)
-        with open(outdir, 'w') as outstream:
-            json.dump(current_full_houses_dict, outstream, indent=2)
+        # save temp result
+        outfile = f'housing_data_{today}.json'
+        outdir = f'data/{outfile}'
+        if not path.isfile(outdir):
+            with open(outdir, 'w') as outstream:
+                json.dump(full_houses_dict, outstream, indent=2)
+        else:
+            with open(outdir, 'r') as instream:
+                current_full_houses_dict = json.load(instream)
+            current_full_houses_dict.update(full_houses_dict)
+            with open(outdir, 'w') as outstream:
+                json.dump(current_full_houses_dict, outstream, indent=2)
