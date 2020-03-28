@@ -6,6 +6,8 @@ from datetime import datetime
 
 def scrape_jaap(target):
 
+    today = datetime.now().strftime('%Y_%m_%d')
+
     response = requests.get(target.format(1))
     soup = BeautifulSoup(response.content, 'html.parser')
     number_of_pages = int(soup.select('.navigation-buttons span')[0].text.split()[-1])
@@ -58,10 +60,8 @@ def scrape_jaap(target):
             count +=1
 
     # save temp result
-    today = datetime.now().strftime('%Y_%m_%d')
     outfile = f'housing_data_{today}.json'
     outdir = f'data/{outfile}'
-
     if not path.isfile(outdir):
         with open(outdir, 'w') as outstream:
             json.dump(full_houses_dict, outstream, indent=2)
