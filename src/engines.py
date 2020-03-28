@@ -4,7 +4,7 @@ from os import path
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-def scrape_jaap(target='https://www.jaap.nl/koophuizen/utrecht/utrecht/nieuwegein/p{}'):
+def scrape_jaap(target):
 
     response = requests.get(target.format(1))
     soup = BeautifulSoup(response.content, 'html.parser')
