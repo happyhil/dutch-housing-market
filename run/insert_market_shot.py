@@ -12,11 +12,12 @@ def main():
     print(f'Running {path.basename(__file__)}..')
 
     # define today
-    today = datetime.now().strftime('%Y_%m_%d')
+    # today = datetime.now().strftime('%Y_%m_%d')
+    today = '2020_03_28'
 
     # read in way data
-    with open(f'data/raw/housing_data_{today}.json', 'r') as s:
-        housesdict = json.load(s)
+    with open(f'data/raw/housing_data_{today}.json', 'r') as stream:
+        housesdict = json.load(stream)
 
     # prep data for calculations
     housesdf = pipes.prepare_housing_dict(housesdict)
@@ -33,17 +34,17 @@ def main():
     }
 
     # check if current file exists
-    if path.isfile('data/housing_market_shots.json'):
+    if path.isfile('data/shots/housing_market_shots.json'):
         # append data to existing json
-        with open('data/shots/housing_market_shots.json', 'r') as shotstream:
-            shots = json.load(shotstream)
-            shots.update(output_dict)
-        with open('data/shots/housing_market_shots.json', 'w') as shotstream:
-            json.dump(shots, shotstream, indent=2)
+        with open('data/shots/housing_market_shots.json', 'r') as rshotsstream:
+            shots = json.load(rshotsstream)
+        newshots = {**shots, **output_dict}
+        with open('data/shots/housing_market_shots.json', 'w') as wshotstream:
+            json.dump(newshots, wshotstream, indent=2)
     else:
         # write new json
-        with open('data/shots/housing_market_shots.json', 'w') as shotstream:
-            json.dump(output_dict, shotstream, indent=2)
+        with open('data/shots/housing_market_shots.json', 'w') as wshotstream:
+            json.dump(output_dict, wshotstream, indent=2)
 
 if __name__ == '__main__':
     main()
