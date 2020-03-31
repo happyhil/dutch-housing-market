@@ -1,6 +1,7 @@
 build/
 dist/
 data/
+log/
 .ipynb_checkpoints/
 *.egg-info/
 venv/
