@@ -12,8 +12,7 @@ def main():
     print(f'Running {path.basename(__file__)}..')
 
     # define today
-    # today = datetime.now().strftime('%Y_%m_%d')
-    today = '2020_03_28'
+    today = datetime.now().strftime('%Y_%m_%d')
 
     # read in way data
     with open(f'data/raw/housing_data_{today}.json', 'r') as stream:
