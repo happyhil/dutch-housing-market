@@ -1,0 +1,60 @@
+{
+  "creation_date": "2020-03-30",
+  "version": 0.1,
+  "housing_facts": {
+    "The Netherlands": {
+      "number_available": 51641,
+      "price_mean": 448247.66,
+      "price_median": 349000.0,
+      "meters_mean": 143.42,
+      "meters_median": 125.0,
+      "meter_price_mean": 3684.8,
+      "meter_price_median": 2733.58
+    },
+    "Amsterdam": {
+      "number_available": 1661,
+      "price_mean": 733219.22,
+      "price_median": 525000.0,
+      "meters_mean": 140.34,
+      "meters_median": 122.0,
+      "meter_price_mean": 6059.79,
+      "meter_price_median": 4306.57
+    },
+    "Rotterdam": {
+      "number_available": 1056,
+      "price_mean": 464835.87,
+      "price_median": 324750.0,
+      "meters_mean": 135.92,
+      "meters_median": 118.0,
+      "meter_price_mean": 3845.83,
+      "meter_price_median": 2840.91
+    },
+    "Utrecht": {
+      "number_available": 489,
+      "price_mean": 483461.98,
+      "price_median": 400000.0,
+      "meters_mean": 135.1,
+      "meters_median": 124.0,
+      "meter_price_mean": 4118.69,
+      "meter_price_median": 3339.2
+    },
+    "Hilversum": {
+      "number_available": 306,
+      "price_mean": 693917.06,
+      "price_median": 585000.0,
+      "meters_mean": 144.29,
+      "meters_median": 127.0,
+      "meter_price_mean": 6020.18,
+      "meter_price_median": 4324.92
+    },
+    "Amstelveen": {
+      "number_available": 254,
+      "price_mean": 745368.8,
+      "price_median": 622500.0,
+      "meters_mean": 144.0,
+      "meters_median": 126.0,
+      "meter_price_mean": 6283.83,
+      "meter_price_median": 4791.67
+    }
+  }
+}
