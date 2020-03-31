@@ -26,7 +26,7 @@ def scrape_jaap(target):
             try:
                 location = h.select('.property-address-zipcity')[0].text
             except:
-                location = 'noadress'
+                location = 'noaddress'
 
             # price
             try:
@@ -41,11 +41,11 @@ def scrape_jaap(target):
                 meters = 'nometers'
 
 
-            # sold
+            # status
             try:
-                sold = h.select('.property-photo span')[0].text
+                status = h.select('.property-photo span')[0].text
             except:
-                sold = 'available'
+                status = 'available'
 
             house_dict = {
                        count:
@@ -53,7 +53,7 @@ def scrape_jaap(target):
                            'location': location,
                            'price': price,
                            'meters': meters,
-                           'sold': sold
+                           'status': status
                             }
                         }
             full_houses_dict.update(house_dict)
@@ -61,7 +61,7 @@ def scrape_jaap(target):
 
         # save temp result
         outfile = f'housing_data_{today}.json'
-        outdir = f'data/{outfile}'
+        outdir = f'data/raw/{outfile}'
         if not path.isfile(outdir):
             with open(outdir, 'w') as outstream:
                 json.dump(full_houses_dict, outstream, indent=2)
