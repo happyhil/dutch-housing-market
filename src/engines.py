@@ -1,8 +1,10 @@
+
 import requests
 import json
 from os import path
 from bs4 import BeautifulSoup
 from datetime import datetime
+
 
 def scrape_jaap(target):
 

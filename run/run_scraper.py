@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
+
+from os import path
 from src.engines import scrape_jaap
+
 
 def main():
 
